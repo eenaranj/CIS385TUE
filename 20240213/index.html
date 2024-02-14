@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Eduardo Naranjo">
+    <meta name="description" content="A ist of html form elements">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+
+<body style="height: 1500px">
+
+    <h1>HTML Forms</h1>
+
+    <h3>&lt;input&gt;</h3>
+
+    <h3>To enter text (method get)</h3>
+    <form method="get">
+        <p>Enter your first name:
+            <input type="text" name="first_name" id="first_name">
+        </p>
+        <p>Enter your last name:
+            <input type="text" name="last_name" id="last_name">
+        </p>
+        </p>
+        <p><input type="submit" value="Submit info..."></p>
+    </form>
+
+    <!-- document.getElementById("first_name") -->
+
+    <!-- index.html?first_name=Eduardo 
+    index.html?first_name=John&last_name=Smith
+    -->
+
+    <h3>To enter text (method post)</h3>
+    <form method="post">
+        <p>Enter your first name:
+            <input type="text" name="first_name" id="first_name">
+        </p>
+        <p>Enter your last name:
+            <input type="text" name="last_name" id="last_name">
+        </p>
+        </p>
+        <p><input type="submit" value="Submit info..."></p>
+    </form>
+
+    <h3>Using a button</h3>
+    <!-- Use an input type="button" for this class -->
+    <form method="post">
+        <p>Enter your first name:
+            <input type="text" name="first_name" id="first_name">
+        </p>
+        <p>Enter your last name:
+            <input type="text" name="last_name" id="last_name">
+        </p>
+        </p>
+        <p><input type="button" name="submitBtn" id="submitBtn" value="Submit info..."
+                onclick="alert('You sent the names')"></p>
+    </form>
+
+    <h3>Using html element button</h3>
+    <!-- Do not use a button html element 
+    index.html?first_name=111&last_name=222
+    -->
+    <form method="get">
+        <p>Enter your first name:
+            <input type="text" name="first_name" id="first_name">
+        </p>
+        <p>Enter your last name:
+            <input type="text" name="last_name" id="last_name">
+        </p>
+        </p>
+        <p><button>Send names...</button></p>
+    </form>
+
+    <h3>Select element</h3>
+
+    <select name="state" id="state">
+        <option value="">-select state-</option>
+        <option value="CA">CA</option>
+        <option value="NY">NY</option>
+        <option value="NJ">NJ</option>
+        <option value="CT">CT</option>
+    </select>
+
+    <br>
+
+    <select name="state" id="state">
+        <option value="">-select site-</option>
+        <option value="https://www.cuny.edu">CUNY</option>
+        <option value="https://www.bmcc.cuny.edu">BMCC</option>
+        <option value="https://www.google.com">Google</option>
+    </select>
+
+    <h3>Check boxes</h3>
+
+    <input type="checkbox" name="html" id="html"> Html<br>
+    <input type="checkbox" name="css" id="css"> CSS<br>
+    <input type="checkbox" name="js" id="js"> JavaScript<br>
+
+    <h3>Radio buttons</h3>
+
+    <input type="radio" name="year" id="year" value="2022"> 2022<br>
+    <input type="radio" name="year" id="year" value="2023"> 2023<br>
+    <input type="radio" name="year" id="year" value="2024" checked> 2024<br>
+
+    <h3>Long Form</h3>
+
+
+    <table>
+        <tr>
+            <td>First Name:</td>
+            <td><input type="text" name="first_name" id="first_name"></td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+            <td><input type="text" name="last_name" id="last_name"></td>
+        </tr>
+        <tr>
+            <td>Street:</td>
+            <td><input type="text" name="add1" id="add1"></td>
+        </tr>
+        <tr>
+            <td>Apt:</td>
+            <td><input type="text" name="apt" id="apt"></td>
+        </tr>
+        <tr>
+            <td>City:</td>
+            <td><input type="text" name="city" id="city"></td>
+        </tr>
+        <tr>
+            <td>State:</td>
+            <td><select name="state" id="state">
+                    <option value="">-select state-</option>
+                    <option value="CA">CA</option>
+                    <option value="NY">NY</option>
+                    <option value="NJ">NJ</option>
+                    <option value="CT">CT</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td>Zip:</td>
+            <td><input type="text" name="zip" id="zip"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" value="Save..">
+            </td>
+        </tr>
+    </table>
+
+
+
+</body>
+
+</html>
