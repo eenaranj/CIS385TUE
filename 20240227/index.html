@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+</head>
+<body>
+
+
+    <script>
+        function createTable(){
+            var table = document.createElement("table");
+            table.setAttribute("border","1");
+            table.setAttribute("id","budget_table");
+            
+            var tr1 = document.createElement("tr");
+            var tr2 = document.createElement("tr");
+            var tr3 = document.createElement("tr");
+            var tr4 = document.createElement("tr");
+            
+            var td11 = document.createElement("td");
+            var td12 = document.createElement("td");
+            var td13 = document.createElement("td");
+            var td14 = document.createElement("td");
+
+            var td21 = document.createElement("td");
+            var td22 = document.createElement("td");
+            var td23 = document.createElement("td");
+            var td24 = document.createElement("td");
+            
+            var td31 = document.createElement("td");
+            var td32 = document.createElement("td");
+            var td33 = document.createElement("td");
+            var td34 = document.createElement("td");
+            
+            var td41 = document.createElement("td");
+            var td42 = document.createElement("td");
+            var td43 = document.createElement("td");
+            var td44 = document.createElement("td");
+
+            var txt11 = document.createTextNode("Month");
+            var txt12 = document.createTextNode("Rent");
+            var txt13 = document.createTextNode("Food");
+            var txt14 = document.createTextNode("Transportation");
+            
+            var txt21 = document.createTextNode("January");
+            var txt22 = document.createTextNode("100");
+            var txt23 = document.createTextNode("200");
+            var txt24 = document.createTextNode("150");
+            
+            var txt31 = document.createTextNode("February");
+            var txt32 = document.createTextNode("100");
+            var txt33 = document.createTextNode("200");
+            var txt34 = document.createTextNode("150");
+            
+            var txt41 = document.createTextNode("March");
+            var txt42 = document.createTextNode("100");
+            var txt43 = document.createTextNode("200");
+            var txt44 = document.createTextNode("150");
+
+            td11.appendChild(txt11);
+            td12.appendChild(txt12);
+            td13.appendChild(txt13);
+            td14.appendChild(txt14);
+            td21.appendChild(txt21);
+            td22.appendChild(txt22);
+            td23.appendChild(txt23);
+            td24.appendChild(txt24);
+            td31.appendChild(txt31);
+            td32.appendChild(txt32);
+            td33.appendChild(txt33);
+            td34.appendChild(txt34);
+            td41.appendChild(txt41);
+            td42.appendChild(txt42);
+            td43.appendChild(txt43);
+            td44.appendChild(txt44);
+
+            tr1.appendChild(td11);
+            tr1.appendChild(td12);
+            tr1.appendChild(td13);
+            tr1.appendChild(td14);
+
+            tr2.appendChild(td21);
+            tr2.appendChild(td22);
+            tr2.appendChild(td23);
+            tr2.appendChild(td24);
+
+            tr3.appendChild(td31);
+            tr3.appendChild(td32);
+            tr3.appendChild(td33);
+            tr3.appendChild(td34);
+
+            tr4.appendChild(td41);
+            tr4.appendChild(td42);
+            tr4.appendChild(td43);
+            tr4.appendChild(td44);
+
+            table.appendChild(tr1);
+            table.appendChild(tr2);
+            table.appendChild(tr3);
+            table.appendChild(tr4);
+
+            document.body.appendChild(table);
+
+        }
+        window.load = createTable();
+    </script>
+    
+</body>
+</html>
