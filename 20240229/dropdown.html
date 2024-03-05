@@ -1,0 +1,60 @@
+<!-- dropdown.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Eduardo Naranjo">
+    <meta name="description" content="Use JavaScript to get the selected value from a dropdown element">
+    <title>JavaScript</title>
+    <script>
+        function htmlChange(){
+            //console.log("htmlChange function");
+            var h = document.getElementById("html").value;
+            console.log("HTML Level selected: " + h);
+        }
+    </script>
+</head>
+<body>
+    
+    <table>
+        <tr>
+            <td>HTML</td>
+            <td>
+                <select name="html" id="html" onchange="htmlChange()">
+                    <option value="">-select-</option>
+                    <option value="b">Basic</option>
+                    <option value="m">Medium</option>
+                    <option value="e">Expert</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>CSS</td>
+            <td>
+                <select name="css" id="css">
+                    <option value="">-select-</option>
+                    <option value="b">Basic</option>
+                    <option value="m">Medium</option>
+                    <option value="e">Expert</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>JavaScript</td>
+            <td>
+                <select name="js" id="js">
+                    <option value="">-select-</option>
+                    <option value="b">Basic</option>
+                    <option value="m">Medium</option>
+                    <option value="e">Expert</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+
+
+
+</body>
+</html>

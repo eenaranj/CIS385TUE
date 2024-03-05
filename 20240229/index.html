@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+
+</head>
+
+<body>
+
+    <h3>My First Form</h3>
+
+    <table>
+        <tr>
+            <td>Number 1</td>
+            <td>
+                <input type="number" name="n1" id="n1">
+            </td>
+        </tr>
+        <tr>
+            <td>Number 2</td>
+            <td>
+                <input type="number" name="n2" id="n2">
+            </td>
+        </tr>
+        <tr>
+            <td>Result</td>
+            <td>
+                <input type="text" name="res" id="res">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" value="Add Numbers" onclick="addNumbers()">
+            </td>
+        </tr>
+    </table>
+
+    <ul>
+        <li>Create a form</li>
+        <li>Get the two numbers</li>
+        <li>Add the two numbers</li>
+        <li>Show the result</li>
+    </ul>
+
+    <script>
+
+        function addNumbers() {
+            console.log("Inside addNumbers() function");
+            // Get the two numbers
+            var num1 = Number(document.getElementById("n1").value);
+            //console.log("Number 1 = " + num1);
+            console.log(typeof(num1));
+            alert("Number 1 = " + num1);
+
+            var num2 = Number(document.getElementById("n2").value);
+            //console.log("Number 2 = " + num2);
+            console.log(typeof(num2));
+            alert("Number 2 = " + num2);
+
+            // Add the two numbers
+            console.log("Result " + (num1 + num2));
+
+            // Show the result
+            document.getElementById("res").value = (num1 + num2);
+        }
+
+
+    </script>
+
+</body>
+
+</html>
