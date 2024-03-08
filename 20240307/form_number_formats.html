@@ -1,0 +1,77 @@
+<!-- form_number_formats.html -->
+<!-- From: https://www.freecodecamp.org/news/how-to-convert-a-string-to-a-number-in-javascript/ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Formats</title>
+</head>
+<body>
+
+    <h3>Convert String to a Number</h3>
+
+    <table>
+        <tr>
+            <td>Number 1: Integer</td>
+            <td>
+                <input type="text" name="number1" id="number1" value="100">
+            </td>
+        </tr>
+        <tr>
+            <td>Number 2: Float</td>
+            <td>
+                <input type="text" name="number2" id="number2" value="99.99">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" value="Convert" onclick="convertNumbers()">
+            </td>
+        </tr>
+    </table>
+
+    <pre id="result"></pre>
+
+    <script>
+        function convertNumbers(){
+            // Show that the control is inside the function
+            console.log("Inside convertNumbers() function.");
+
+            // Get the values from textboxes
+            var num1 = document.getElementById("number1").value;
+            var num2 = document.getElementById("number2").value;
+
+            
+            var result = document.getElementById("result");
+            result.innerHTML = "Inside convertNumbers() function.\n\n";
+            
+            // Number() function
+            result.innerHTML += "1. Using the Number() function\n";
+            result.innerHTML += "----------------------------------\n";
+            result.innerHTML += "One way to convert a string into a number would be to use the Number() function.\n\n";
+            result.innerHTML += "Number 1: " + Number(num1) + "\n";
+            result.innerHTML += "Number 2: " + Number(num2) + "\n\n";
+
+            // parseInt() function
+            result.innerHTML += "2. Using the parseInt() function\n";
+            result.innerHTML += "----------------------------------\n";
+            result.innerHTML += "Another way to convert a string into a number is to use the parseInt() function. This function takes in a string and an optional radix.\n";
+            result.innerHTML += "A radix is a number between 2 and 36 which represents the base in a numeral system. For example, a radix of 2 would represent the binary system,\n";
+            result.innerHTML += "while a radix of 10 represents the decimal system.\n\n";
+            result.innerHTML += "Number 1: " + parseInt(num1) + "\n";
+            result.innerHTML += "Number 2: " + parseInt(num2) + "\n\n";
+
+            // parseFloat() function
+            result.innerHTML += "3. Using the parseFloat() function\n";
+            result.innerHTML += "----------------------------------\n";
+            result.innerHTML += "The parseFloat() function will take in a string value and return a floating point number.\n\n";
+            result.innerHTML += "Number 1: " + parseFloat(num1) + "\n";
+            result.innerHTML += "Number 2: " + parseFloat(num2) + "\n\n";
+
+        }
+    </script>
+    
+</body>
+</html>

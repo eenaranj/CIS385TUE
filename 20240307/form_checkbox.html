@@ -1,0 +1,71 @@
+<!-- form_checkbox.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkboxes</title>
+</head>
+<body>
+
+    <h2>Create checkboxes and get their value</h2>
+
+    <h3>What web development technologies are you familiar with?</h3> 
+
+    <table>
+        <tr>
+            <td>HTML</td>
+            <td>
+                <input type="checkbox" name="html" id="html" value="html_yes" checked>
+            </td>
+        </tr>
+        <tr>
+            <td>CSS</td>
+            <td>
+                <input type="checkbox" name="css" id="css" value="css_yes">
+            </td>
+        </tr>
+        <tr>
+            <td>JavaScript</td>
+            <td>
+                <input type="checkbox" name="js" id="js" value="js_yes">
+            </td>
+        </tr>
+        <tr>
+            <td>PHP</td>
+            <td>
+                <input type="checkbox" name="php" id="php" value="php_yes">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="getCheckboxesValues()">Submit</button>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <button onclick="document.getElementById('code').style.display='block'">Open Code</button>
+
+    <script>
+        function getCheckboxesValues(){
+            // Make sure JavaScript gets the control inside the function
+            console.log("Inside getCheckboxesValues() function");
+
+            // Get the checkboxes values (true/false)
+            var html = document.getElementById("html");
+            var css = document.getElementById("css");
+            var js = document.getElementById("js");
+            var php = document.getElementById("php");
+
+            // Show status/value of each checkbox
+            console.log("HTML: " + html.checked + " value: " + html.value);
+            console.log("CSS: " + css.checked);
+            console.log("JavaScript: " + js.checked);
+            console.log("PHP: " + php.checked);
+        }
+    </script>
+    
+</body>
+</html>
