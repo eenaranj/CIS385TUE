@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="author" content="Eduardo Naranjo">
+    <meta name="description" content="Initial page for the online store">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Products</title>
+
+    <style>
+        .product-item {
+            text-align: center;
+            width: 350px;
+        }
+
+        .product-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        .hover-img {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity .5s ease, transform 2s cubic-bezier(0, 0, .44, 1.18);
+        }
+
+        .product-image:hover .hover-img {
+            opacity: 1;
+            transform: scale(1.12);
+        }
+
+        .product-item h3 {
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .product-item span {
+            font-size: 15px;
+            font-weight: 600;
+            color: #ed028b;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        /*
+        https://source.unsplash.com/GtOo17K-vTg
+        https://source.unsplash.com/3_XeNGVbTQA
+        */
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">My Online Store</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products1.html">Page 1</a></li>
+                <li><a href="products2.html">Page 2</a></li>
+                <li class="active"><a href="products3.html">Page 3</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top:80px">
+
+        <div class="row">
+
+            <div class="col-md-4">
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <a href="#">
+                            <img src="images/IMG_1318.JPG" width="600" height="720">
+                        </a>
+                        <div class="hover-img">
+                            <a href="#">
+                                <img src="images/IMG_1319.JPG" width="600" height="720">
+                            </a>
+                        </div>
+                    </div>
+                    <h3>Product title</h3>
+                    <span>$100</span>
+                    <p><button class="btn btn-primary">Add to Cart</button></p>
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <a href="#">
+                            <img src="images/IMG_1320.JPG" width="600" height="720">
+                        </a>
+                        <div class="hover-img">
+                            <a href="#">
+                                <img src="images/IMG_1321.JPG" width="600" height="720">
+                            </a>
+                        </div>
+                    </div>
+                    <h3>Product title</h3>
+                    <span>$200</span>
+                    <p><button class="btn btn-primary">Add to Cart</button></p>
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <a href="#">
+                            <img src="images/IMG_1322.JPG" width="600" height="720">
+                        </a>
+                        <div class="hover-img">
+                            <a href="#">
+                                <img src="images/IMG_1323.JPG" width="600" height="720">
+                            </a>
+                        </div>
+                    </div>
+                    <h3>Product title</h3>
+                    <span>$300</span>
+                    <p><button class="btn btn-primary">Add to Cart</button></p>
+                </div>
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-4">
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <a href="#">
+                            <img src="images/IMG_1324.JPG" width="600" height="720">
+                        </a>
+                        <div class="hover-img">
+                            <a href="#">
+                                <img src="images/IMG_1325.JPG" width="600" height="720">
+                            </a>
+                        </div>
+                    </div>
+                    <h3>Product title</h3>
+                    <span>$400</span>
+                    <p><button class="btn btn-primary">Add to Cart</button></p>
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <a href="#">
+                            <img src="images/IMG_1326.JPG" width="600" height="720">
+                        </a>
+                        <div class="hover-img">
+                            <a href="#">
+                                <img src="images/IMG_1327.JPG" width="600" height="720">
+                            </a>
+                        </div>
+                    </div>
+                    <h3>Product title</h3>
+                    <span>$400</span>
+                    <p><button class="btn btn-primary">Add to Cart</button></p>
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <a href="#">
+                            <img src="images/IMG_1328.JPG" width="600" height="720">
+                        </a>
+                        <div class="hover-img">
+                            <a href="#">
+                                <img src="images/IMG_1329.JPG" width="600" height="720">
+                            </a>
+                        </div>
+                    </div>
+                    <h3>Product title</h3>
+                    <span>$400</span>
+                    <p><button class="btn btn-primary">Add to Cart</button></p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>
