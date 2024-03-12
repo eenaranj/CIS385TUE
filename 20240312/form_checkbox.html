@@ -1,0 +1,142 @@
+<!-- form_checkbox.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkboxes</title>
+</head>
+<body>
+
+    <h2>Create a checkboxes and get their value</h2>
+
+    <h3>What web development technologies are you familiar with?</h3> 
+
+    <table>
+        <tr>
+            <td>HTML</td>
+            <td>
+                <input type="checkbox" name="html" id="html" value="html_yes" checked>
+            </td>
+        </tr>
+        <tr>
+            <td>CSS</td>
+            <td>
+                <input type="checkbox" name="css" id="css" value="css_yes">
+            </td>
+        </tr>
+        <tr>
+            <td>JavaScript</td>
+            <td>
+                <input type="checkbox" name="js" id="js" value="js_yes">
+            </td>
+        </tr>
+        <tr>
+            <td>PHP</td>
+            <td>
+                <input type="checkbox" name="php" id="php" value="php_yes">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="getCheckboxesValues()">Submit</button>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <button onclick="document.getElementById('code').style.display='block'">Open Code</button>
+    <pre style="margin-top: 100px; display: none;" id="code">
+&lt;!-- form_checkbox.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Checkboxes&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body>&gt;
+
+    &lt;h2&gt;Create a checkboxes and get their value&lt;/h2&gt;
+
+    &lt;h3&gt;What web development technologies are you familiar with?&lt;/h3&gt; 
+
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;td&gt;HTML&lt;/td&gt;
+            &lt;td&gt;
+                &lt;input type="checkbox" name="html" id="html" value="html_yes" checked&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;CSS&lt;/td&gt;
+            &lt;td&gt;
+                &lt;input type="checkbox" name="css" id="css" value="css_yes"&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;JavaScript&lt;/td&gt;
+            &lt;td&gt;
+                &lt;input type="checkbox" name="js" id="js" value="js_yes"&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;PHP&lt;/td&gt;
+            &lt;td&gt;
+            &lt;input type="checkbox" name="php" id="php" value="php_yes"&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;
+                &lt;button onclick="getCheckboxesValues()"&gt;Submit&lt;/button&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+
+    &lt;script>
+        function getCheckboxesValues(){
+            // Make sureJavaCsript gets the control inside the function
+            console.log("Inside getCheckboxesValues() function");
+
+            // Get the checkboxes values (true/false)
+            var html = document.getElementById("html");
+            var css = document.getElementById("css");
+            var js = document.getElementById("js");
+            var php = document.getElementById("php");
+
+            // Show status/value of each checkbox
+            console.log("HTML: " + html.checked);
+            console.log("CSS: " + css.checked);
+            console.log("JavaScript: " + js.checked);
+            console.log("PHP: " + php.checked);
+        }
+    &lt;/script>
+    
+&lt;/body>
+&lt;/html>
+    </pre>
+
+    <script>
+        function getCheckboxesValues(){
+            // Make sureJavaCsript gets the control inside the function
+            console.log("Inside getCheckboxesValues() function");
+
+            // Get the checkboxes values (true/false)
+            var html = document.getElementById("html");
+            var css = document.getElementById("css");
+            var js = document.getElementById("js");
+            var php = document.getElementById("php");
+
+            // Show status/value of each checkbox
+            console.log("HTML: " + html.checked + " value: " + html.value);
+            console.log("CSS: " + css.checked);
+            console.log("JavaScript: " + js.checked);
+            console.log("PHP: " + php.checked);
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JS Get selected value from a dropdown element">
+    <meta name="author" content="Eduardo Naranjo">
+    <title>Select</title>
+</head>
+
+<body>
+
+    <h3>Get Select (dropdown) value</h3>
+
+    <select id="car_models">
+        <option value="1">Ford</option>
+        <option value="2" selected="selected">Chevy</option>
+        <option value="3">Audi</option>
+        <option value="4">Honda</option>
+    </select>
+
+    <script>
+        var e = document.getElementById("car_models");
+        var value = e.value;
+        var text = e.options[e.selectedIndex].text;
+        console.log("Selected Text: " + text);
+        console.log("Selected Value: " + value);
+    </script>
+
+    <h3>The Code</h3>
+
+    <pre>
+&lt;select id="car_models">
+    &lt;option value="1">Ford&lt;/option>
+    &lt;option value="2" selected="selected">Chevy&lt;/option>
+    &lt;option value="3">Audi&lt;/option>
+    &lt;option value="4">Honda&lt;/option>
+&lt;/select>
+    
+&lt;script>
+    var e = document.getElementById("car_models");
+    var value = e.value;
+    var text = e.options[e.selectedIndex].text;
+    console.log("Selected Text: " + text);
+    console.log("Selected Value: " + value);
+&lt;/script>
+    </pre>
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxes</title>
+    <style>
+        select {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Calculate Sales Taxes</h3>
+
+    <table>
+        <tr>
+            <td>Sub-Total</td>
+            <td>
+                <input type="number" name="subtotal" id="subtotal">
+            </td>
+        </tr>
+        <tr>
+            <td>State</td>
+            <td>
+                <select name="state" id="state">
+                    <option value="">-select state-</option>
+                    <option value="0.08875">New York</option>
+                    <option value="0.0625">New Jersey</option>
+                    <option value="0.0635">Connecticut</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Tax Amount</td>
+            <td>
+                <input type="text" name="tax_amount" id="tax_amount">
+            </td>
+        </tr>
+        <tr>
+            <td>Total Amount</td>
+            <td>
+                <input type="text" name="total_amount" id="total_amount">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="calculateTaxes()">Calculate</button>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function calculateTaxes() {
+            console.log("Inside calculateTaxes() function.");
+
+            var amount = Number(document.getElementById("subtotal").value);
+            console.log("Amount: " + amount);
+
+            var state = document.getElementById("state")
+            var tax_value = state.value;
+            var tax_state = document.getElementById("state").options[state.selectedIndex].text;
+            console.log("Selected State: " + tax_state);
+            console.log("Selected Tax: " + tax_value);
+
+            var tax_amount = amount * tax_value;
+            console.log("Tax Amount: " + tax_amount);
+
+            // Show result on form
+            document.getElementById("tax_amount").value = tax_amount;
+
+            // Format currency
+            let USDollar = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+            });
+
+            // Show total value on form
+            document.getElementById("total_amount").value = USDollar.format((tax_amount + amount));
+
+            console.log(`The formated version of ${(tax_amount + amount)} is ${USDollar.format((tax_amount + amount))}`);
+
+        }
+    </script>
+
+</body>
+
+</html>

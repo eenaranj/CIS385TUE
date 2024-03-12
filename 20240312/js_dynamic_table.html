@@ -1,0 +1,177 @@
+<!-- js_dynamic_table.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        img {
+            width: 90%;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <h3>JavaScript: Dynamic Table</h3>
+
+    <p>1. Create a table with 5 rows and 3 columns when the page loads.</p>
+
+    <table id="my_table" border="1" cellspacing="0" cellpadding="10"></table>
+
+    <p>2. Create a 10 x 10 multiplication table</p>
+
+    <table id="multiplication_table" border="1" cellspacing="0" cellpadding="10"></table>
+
+    <p>3. Load data into table</p>
+    <div id="table_container"></div>
+
+    <p>4. Use a form to create a table</p>
+    <div>
+        <label for="rows">Number of Rows:</label>
+        <input type="number" id="rows" name="rows" value="3">
+        <label for="cols">Number of Columns:</label>
+        <input type="number" id="cols" name="cols" value="3">
+        <button onclick="generateTable2()">Generate Table</button>
+    </div>
+
+    <p></p>
+    <div id="table_container2">Dynamic table will load here.</div>
+
+    <p>5. Load Images into a dynamic table</p>
+    <p><button id="image_button" onclick="loadImages()">Load Images</button></p>
+    <div id="table_container3">Table with images will load here.</div>
+
+    <script>
+        window.onload = function () {
+
+            console.log("Page finished loading.");
+
+            var table = document.getElementById("my_table");
+
+            // Outer for loop to create TRs
+            for (var i = 1; i <= 5; i++) {
+                var tr = document.createElement("tr");
+                console.log("Created tr " + i);
+
+                // Inner for loop to create TDs
+                for (var j = 1; j <= 3; j++) {
+                    var td = document.createElement("td");
+                    console.log("Created td " + j + " within tr  " + i);
+
+                    var txt = document.createTextNode(" Row " + i + ", Column " + j);
+                    td.appendChild(txt);
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            }
+
+            // Multiplication table
+            var table2 = document.getElementById("multiplication_table");
+
+            for (var i = 1; i <= 10; i++) {
+                var tr = document.createElement("tr");
+                for (var j = 1; j <= 10; j++) {
+                    var td = document.createElement("td");
+                    td.style.textAlign = "center";
+                    var txt = document.createTextNode(i * j);
+                    td.appendChild(txt);
+                    tr.appendChild(td);
+                }
+                table2.appendChild(tr);
+            }
+            
+
+            // Objects
+            const data = [
+                { name: 'John', age: 30, email: 'john@example.com' },
+                { name: 'Jane', age: 25, email: 'jane@example.com' },
+                { name: 'Bob', age: 40, email: 'bob@example.com' },
+                { name: 'Eduardo', age: 59, email: 'en@example.com' }
+            ];
+
+            const tableContainer = document.getElementById('table_container');
+            tableContainer.innerHTML = generateTable(data);
+
+
+
+        }
+
+
+
+        function generateTable(data) {
+            let table = '<table border="1">';
+            table += '<tr><th>Name</th><th>Age</th><th>Email</th></tr>';
+            data.forEach(item => {
+                table += `<tr><td>${item.name}</td><td>${item.age}</td><td>${item.email}</td></tr>`;
+            });
+            table += '</table>';
+            return table;
+        }
+
+
+        function generateTable2() {
+            const rows = document.getElementById('rows').value;
+            const cols = document.getElementById('cols').value;
+            let table = '<table border="1">';
+            for (let i = 0; i < rows; i++) {
+                table += '<tr>';
+                for (let j = 0; j < cols; j++) {
+                    table += `<td>Row ${i + 1}, Column ${j + 1}</td>`;
+                }
+                table += '</tr>';
+            }
+            table += '</table>';
+            const tableContainer = document.getElementById('table_container2');
+            tableContainer.innerHTML = table;
+        }
+
+        function loadImages() {
+            console.log("Inside loadImages() function");
+
+            let table = '<table border="1">';
+
+            var num = 18;
+
+            // Outer for loop to create TRs
+            for (var i = 1; i <= 8; i++) {
+                table += '<tr>';
+
+                // Inner for loop to create TDs
+                for (var j = 1; j <= 3; j++) {
+
+                    var image = document.createElement("img");
+
+                    table += "<td>";
+                    table += "<img src='images/IMG_13" + (num) + ".JPG' alt='Product Image'>";
+                    table += "<p>Description for Product " + num + "</p>";
+                    table += "<p>Price $1" + j + "0.00</p>";
+                    table += "</td>";
+                    num += 1;
+                }
+                if (i % 3 == 0) {
+                    table += '</tr>';
+                }
+
+            }
+            const tableContainer = document.getElementById('table_container3');
+            tableContainer.innerHTML = table;
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

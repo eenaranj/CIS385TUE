@@ -1,0 +1,72 @@
+<!-- form_radiobutton.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Buttons</title>
+</head>
+
+<body>
+
+    <h2>Create a radio buttons and get their value</h2>
+
+    <h3>Choose your favorite season:</h3>
+
+    <table>
+        <tr>
+            <td>Summer</td>
+            <td>
+                <input type="radio" name="season" id="summer" value="summer">
+            </td>
+        </tr>
+        <tr>
+            <td>Winter</td>
+            <td>
+                <input type="radio" name="season" id="winter" value="winter">
+            </td>
+        </tr>
+        <tr>
+            <td>Spring</td>
+            <td>
+                <input type="radio" name="season" id="spring" value="Spring">
+            </td>
+        </tr>
+        <tr>
+            <td>Fall</td>
+            <td>
+                <input type="radio" name="season" id="fall" value="Fall">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="getValues()">Submit</button>
+            </td>
+        </tr>
+    </table>
+
+
+    <script>
+        function getValues() {
+            // Make sureJavaCsript gets the control inside the function
+            console.log("Inside getValues() function");
+
+            var radios = document.getElementsByName('season');
+
+            for (var i = 0, length = radios.length; i < length; i++) {
+                if (radios[i].checked) {
+                    // do whatever you want with the checked radio
+                    console.log("You stated that you like the " + radios[i].value + " season.");
+
+                    // only one radio can be logically checked, don't check the rest
+                    break;
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>
