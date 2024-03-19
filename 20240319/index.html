@@ -1,28 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For</title>
 </head>
+
 <body>
 
     <table id="store"></table>
 
     <script>
 
-        var products = [
-            {id: 1, desc: "Product 1", price: 100},
-            {id: 2, desc: "Product 2", price: 200},
-            {id: 3, desc: "Product 3", price: 300}
-        ];
+        window.onload = function () {
 
-        // Use a for loop to load objects into
-        // the table with id store
+            console.log("Page Loaded");
 
+            var products = [
+                { id: 1, desc: "Product 1", price: 100 },
+                { id: 2, desc: "Product 2", price: 200 },
+                { id: 3, desc: "Product 3", price: 300 }
+            ];
+
+            // Use a for loop to load objects into
+            // the table with id store
+
+            var products_row = "<tr>";
+
+            for (var i = 0; i < products.length; i++) {
+
+                products_row += "<td>" + products[i].id + "</td>";
+                products_row += "<td>" + products[i].desc + "</td>";
+                products_row += "<td>" + products[i].price + "</td>";
+                console.log("Product ID: " + products[i].id + " Price: " + products[i].price);
+            }
+
+            products_row = "</tr>";
+
+            document.getElementById("store").innerHTML = products_row;
+
+        };
 
     </script>
-    
+
 </body>
+
 </html>
