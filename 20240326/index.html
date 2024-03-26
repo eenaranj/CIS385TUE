@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Cookies</title>
+
+    <script>
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function checkCookie() {
+            let user = getCookie("username");
+            if (user != "") {
+                alert("Welcome again " + user);
+            } else {
+                user = prompt("Please enter your name:", "");
+                if (user != "" && user != null) {
+                    setCookie("username", user, 365);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td>Cookie Name:</td>
+            <td>
+                <input type="text" name="cname" id="cname">
+            </td>
+        </tr>
+        <tr>
+            <td>Cookie Value:</td>
+            <td>
+                <input type="text" name="cval" id="cval">
+            </td>
+        </tr>
+        <tr>
+            <td>Expire (in days):</td>
+            <td>
+                <input type="number" name="expdays" id="expdays">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" value="Save Cookie..." onclick="getCookieData">
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function getCookieData(){
+            console.log("Inside getCookieData function");
+            
+
+        }
+    </script>
+
+</body>
+
+</html>
