@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Counter</title>
+    <style>
+        ol {
+            counter-reset: section;
+            /* Creates a new instance of the
+                             section counter with each ol
+                             element */
+            list-style-type: none;
+        }
+
+        li::before {
+            counter-increment: section;
+            /* Increments only this instance
+                                            of the section counter */
+            content: counters(section, ".") " ";
+            /* Combines the values of all instances
+                                          of the section counter, separated
+                                          by a period */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Nested Counter</h3>
+
+    <ol>
+        <li>item</li>                 <!-- 1     -->
+        <li>item                      <!-- 2     -->
+            <ol>
+                <li>item</li>         <!-- 2.1   -->
+                <li>item</li>         <!-- 2.2   -->
+                <li>item              <!-- 2.3   -->
+                    <ol>
+                        <li>item</li> <!-- 2.3.1 -->
+                        <li>item</li> <!-- 2.3.2 -->
+                    </ol>
+                    <ol>
+                        <li>item</li> <!-- 2.3.1 -->
+                        <li>item</li> <!-- 2.3.2 -->
+                        <li>item</li> <!-- 2.3.3 -->
+                    </ol>
+                </li>
+                <li>item</li>         <!-- 2.4   -->
+            </ol>
+        </li>
+        <li>item</li>                 <!-- 3     -->
+        <li>item</li>                 <!-- 4     -->
+    </ol>
+    <ol>
+        <li>item</li>                 <!-- 1     -->
+        <li>item</li>                 <!-- 2     -->
+    </ol>
+
+</body>
+
+</html>
