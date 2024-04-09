@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIS Staff</title>
+</head>
+
+<body>
+
+    <input 
+        type="button" 
+        name="staffBtn" 
+        id="staffBtn" 
+        value="Load Staff">
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Title</th>
+                <th>Room</th>
+                <th>Phone</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="staffTbl"></tbody>
+    </table>
+
+    <script>
+        // page loads - add a click event to your button
+        window.onload = function(){
+            var btn1 = document.getElementById("staffBtn");
+            btn1.addEventListener("click", loadStaff);
+        }
+
+        // array of objects
+        var staff = [
+            {
+                name:"Abdul Aziz",
+                title:"Adjunct Lecturer",
+                room:"",
+                phone: "",
+                email:"aaziz@bmcc.cuny.edu"
+            },
+            {
+                name:"Eduardo Naranjo",
+                title:"Adjunct Lecturer",
+                room:"",
+                phone: "212-555-1212",
+                email:"enaranjorivera@bmcc.cuny.edu"
+            }
+        ];
+
+        // function to load bmcc staff
+        function loadStaff(){
+            console.log("I'm inside loadStaff function");
+
+            var tblRow = "";
+            for(var i = 0; i < staff.length; i++){
+                tblRow += "<tr>";
+                tblRow += "<td>" + staff[i].name + "</td>";
+                tblRow += "<td>" + staff[i].title + "</td>";
+                tblRow += "<td>" + staff[i].room + "</td>";
+                tblRow += "<td>" + staff[i].phone + "</td>";
+                tblRow += "<td>" + staff[i].email + "</td>";
+                tblRow += "</tr>";
+            }
+            document.getElementById("staffTbl").innerHTML = tblRow;
+        }
+    </script>
+
+</body>
+
+</html>
