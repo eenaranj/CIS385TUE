@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample</title>
+</head>
+
+<body>
+
+    <table border="1">
+        <tr>
+            <th>Product ID</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th></th>
+        </tr>
+        <tbody id="prodTbl"></tbody>
+    </table>
+
+    <script>
+        window.onload = function () {
+            console.log("Page loaded!");
+
+            var prodid = [1, 2, 3, 4];
+
+            var desc = [
+                "iPhone 7 Black",
+                "iPhone 7 Gold",
+                "iPhone 7 Rosegold",
+                "iPhone 7 Black"];
+
+            var price = [100, 200, 300, 400];
+
+            var image = [
+                "7black.jpg",
+                "7gold.jpg",
+                "7rosegold.jpg",
+                "7silver.jpg"
+            ];
+
+            var tblRow = "";
+            for(var i = 0;i < prodid.length;i++){
+                tblRow += "<tr>";
+                tblRow += "<td>" + prodid[i] + "</td>";
+                tblRow += "<td>" + desc[i] + "</td>";
+                tblRow += "<td>" + price[i] + "</td>";
+                tblRow += "<td><img src='images/" + image[i] + "' alt='Product' width='50%'></td>";
+                tblRow += "</tr>";
+            }
+            document.getElementById("prodTbl").innerHTML = tblRow;
+
+        };
+    </script>
+
+</body>
+
+</html>

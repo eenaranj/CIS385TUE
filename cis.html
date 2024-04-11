@@ -6,16 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CIS Staff</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 
 <body>
 
-    <input 
-        type="button" 
-        name="staffBtn" 
-        id="staffBtn" 
-        value="Load Staff">
+    <input type="button" name="staffBtn" id="staffBtn" value="Load Staff">
 
+    <h3>Using a for loop</h3>
     <table border="1">
         <thead>
             <tr>
@@ -29,37 +27,110 @@
         <tbody id="staffTbl"></tbody>
     </table>
 
+    <h3>Using a forEach loop</h3>
+
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Title</th>
+                <th>Room</th>
+                <th>Phone</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="staffTbl2"></tbody>
+    </table>
+
+    
+
     <script>
         // page loads - add a click event to your button
-        window.onload = function(){
+        window.onload = function () {
             var btn1 = document.getElementById("staffBtn");
             btn1.addEventListener("click", loadStaff);
+            btn1.addEventListener("click", LoadStaffWithForEach);
         }
 
         // array of objects
         var staff = [
-            {
-                name:"Abdul Aziz",
-                title:"Adjunct Lecturer",
-                room:"",
-                phone: "",
-                email:"aaziz@bmcc.cuny.edu"
-            },
-            {
-                name:"Eduardo Naranjo",
-                title:"Adjunct Lecturer",
-                room:"",
-                phone: "212-555-1212",
-                email:"enaranjorivera@bmcc.cuny.edu"
-            }
+            { name: "Abdul Aziz", title: "Adjunct Lecturer", room: "", phone: "", email: "aaziz@bmcc.cuny.edu" },
+            { name: "Ahmet Mete Kok", title: "Professor", room: "F-930S", phone: "(212) 220-1492", email: "amkok@bmcc.cuny.edu" },
+            { name: "Alan P. Ramlal", title: "Adjunct Lecturer", room: "", phone: "", email: "aramlal@bmcc.cuny.edu" },
+            { name: "Albert G. Delacruz", title: "Adjunct Lecturer", room: "", phone: "", email: "aldelacruz@bmcc.cuny.edu" },
+            { name: "Albert H. Errera", title: "Professor", room: "F-930Q", phone: "(212) 220-1483", email: "aerrera@bmcc.cuny.edu" },
+            { name: "Alexander Adesman", title: "Adjunct Assistant Professor", room: "", phone: "", email: "aadesman@bmcc.cuny.edu" },
+            { name: "Alexis L. Tenenbaum", title: "Academic Career Advisor", room: "", phone: "", email: "atenenbaum@bmcc.cuny.edu" },
+            { name: "Amir Toliyat", title: "Adjunct Lecturer", room: "", phone: "", email: "atoliyat@bmcc.cuny.edu" },
+            { name: "Anna Rondon", title: "", room: "F-1030K", phone: "(212) 776-6052", email: "arondon@bmcc.cuny.edu" },
+            { name: "Anna Salvati", title: "Associate Professor", room: "F-930P", phone: "(212) 220-1480", email: "asalvati@bmcc.cuny.edu" },
+            { name: "Arnold J. Scheiman", title: "Adjunct Assistant Professor", room: "F-1030L", phone: "(212) 220-7227", email: "ascheiman@bmcc.cuny.edu" },
+            { name: "Ayman I. Zeidan", title: "Adjunct Assistant Professor", room: "", phone: "", email: "azeidan@bmcc.cuny.edu" },
+            { name: "Candido Hernandez", title: "Adjunct Assistant Professor", room: "", phone: "", email: "cahernandez@bmcc.cuny.edu" },
+            { name: "Carlos Linares", title: "Associate Professor", room: "F-930U", phone: "(212) 220-1485", email: "clinares@bmcc.cuny.edu" },
+            { name: "Chigurupati S. Rani", title: "Assistant Professor", room: "F-930M", phone: "(212) 220-1487", email: "CSRANI@bmcc.cuny.edu" },
+            { name: "Ching-Song Wei", title: "Professor", room: "F-930A", phone: "(212) 220-8385", email: "cwei@bmcc.cuny.edu" },
+            { name: "Christine D Silva", title: "", room: "F-1030I", phone: "(212) 220-1490", email: "csilva@bmcc.cuny.edu" },
+            { name: "Christopher B Connallon", title: "Adjunct Lecturer", room: "", phone: "", email: "cconnallon@bmcc.cuny.edu" },
+            { name: "Colin Persaud", title: "Assistant Professor", room: "F-930F", phone: "(212) 346-8639", email: "cpersaud@bmcc.cuny.edu" },
+            { name: "Darshani Jayaweera", title: "Instructor", room: "F-1030H", phone: "(212) 220-1261", email: "djayaweera@bmcc.cuny.edu" },
+            { name: "Dexter Patrick", title: "Adjunct Lecturer", room: "", phone: "", email: "dpatrick@bmcc.cuny.edu" },
+            { name: "Dhananji Amaratunge", title: "", room: "", phone: "", email: "dhamaratunge@bmcc.cuny.edu" },
+            { name: "Dharamraj Kalicharan", title: "Adjunct Lecturer", room: "", phone: "", email: "dkalicharan@bmcc.cuny.edu" },
+            { name: "Eduardo E. Naranjo", title: "Adjunct Lecturer", room: "", phone: "", email: "enaranjorivera@bmcc.cuny.edu" },
+            { name: "Galathara A. Kahanda", title: "Adjunct Assistant Professor", room: "", phone: "", email: "gkahanda@bmcc.cuny.edu" },
+            { name: "Gene Yu", title: "Adjunct Assistant Professor", room: "", phone: "", email: "gyu@bmcc.cuny.edu" },
+            { name: "George A. Nossa", title: "Instructor", room: "", phone: "", email: "gnossa@bmcc.cuny.edu" },
+            { name: "Grace J. Smith", title: "Adjunct Lecturer", room: "", phone: "", email: "grsmith@bmcc.cuny.edu" },
+            { name: "Hao Tang", title: "Professor", room: "F-930N", phone: "(212) 220-1479", email: "htang@bmcc.cuny.edu" },
+            { name: "Helen Eliz Bleckley-Coly", title: "Adjunct Lecturer", room: "", phone: "", email: "hbleckleycoly@bmcc.cuny.edu" },
+            { name: "Ian L Barr", title: "Adjunct Lecturer", room: "", phone: "", email: "ibarr@bmcc.cuny.edu" },
+            { name: "Igor Skuratovskiy", title: "Adjunct Lecturer", room: "", phone: "", email: "iskuratovskiy@bmcc.cuny.edu" },
+            { name: "Jose I. Vargas", title: "Lecturer", room: "F-930T", phone: "(212) 220-1481", email: "jvargas@bmcc.cuny.edu" },
+            { name: "Jose Ramon R. Santos", title: "Adjunct Lecturer", room: "F-930O", phone: "(212) 220-8386", email: "josantos@bmcc.cuny.edu" },
+            { name: "Kenneth J. Coleman", title: "Adjunct Lecturer", room: "", phone: "", email: "kcoleman@bmcc.cuny.edu" },
+            { name: "Kenneth J. Cooper", title: "Adjunct Lecturer", room: "", phone: "", email: "kcooper@bmcc.cuny.edu" },
+            { name: "Kevin F. Byron", title: "Assistant Professor", room: "", phone: "", email: "kbyron@bmcc.cuny.edu" },
+            { name: "Kim Joyce", title: "", room: "F-930D", phone: "(212) 776-6349", email: "kjoyce@bmcc.cuny.edu" },
+            { name: "Kiwook Kwon", title: "Adjunct Lecturer", room: "", phone: "", email: "kkwon@bmcc.cuny.edu" },
+            { name: "Laila A. Atef", title: "Work Study-Student", room: "", phone: "", email: "latef@bmcc.cuny.edu" },
+            { name: "Lena Loewenstine", title: "Adjunct Lecturer", room: "", phone: "", email: "lloewenstine@bmcc.cuny.edu" },
+            { name: "Lin Leung", title: "Professor", room: "F-930K", phone: "(212) 220-1491", email: "lleung@bmcc.cuny.edu" },
+            { name: "Lisa Palmer", title: "", room: "F-930R", phone: "(212) 220-1484", email: "lpalmer@bmcc.cuny.edu" },
+            { name: "Louise T. Yan", title: "Adjunct Lecturer", room: "", phone: "", email: "lyan@bmcc.cuny.edu" },
+            { name: "Luis A. Aponte", title: "Adjunct Assistant Professor", room: "", phone: "", email: "laponte@bmcc.cuny.edu" },
+            { name: "Maryam Vatankhah", title: "Assistant Professor", room: "F-1030M", phone: "(212) 220-1488", email: "mvatankhah@bmcc.cuny.edu" },
+            { name: "Matthew Chan", title: "Assistant Professor", room: "F-930I", phone: "(212) 776-7228", email: "machan@bmcc.cuny.edu" },
+            { name: "Matthew S. Conroy", title: "Adjunct Lecturer", room: "", phone: "", email: "MSConroy@bmcc.cuny.edu" },
+            { name: "Mikhail Veyler", title: "Adjunct Lecturer", room: "", phone: "", email: "mveyler@bmcc.cuny.edu" },
+            { name: "Mingqi Cai", title: "Adjunct Lecturer", room: "", phone: "", email: "mcai@bmcc.cuny.edu" },
+            { name: "Mohammad Azhar", title: "Professor", room: "F-930L", phone: "(212) 220-1477", email: "MAZHAR@bmcc.cuny.edu" },
+            { name: "Musab S Yasin", title: "Adjunct Lecturer", room: "", phone: "", email: "myasin@bmcc.cuny.edu" },
+            { name: "Naushad Hasan", title: "Adjunct Lecturer", room: "", phone: "", email: "nhasan@bmcc.cuny.edu" },
+            { name: "Norman Younis Abufarha", title: "Adjunct Lecturer", room: "", phone: "", email: "nyounisabufarha@bmcc.cuny.edu" },
+            { name: "Paulrick Garraway", title: "", room: "", phone: "", email: "pgarraway@bmcc.cuny.edu" },
+            { name: "Rachel Nossa", title: "Instructor", room: "F-1030N", phone: "(212) 220-1501", email: "rnossa@bmcc.cuny.edu" },
+            { name: "Rhea C. Jara", title: "Adjunct Lecturer", room: "", phone: "", email: "rjara@bmcc.cuny.edu" },
+            { name: "Ricaute R. Rogers", title: "Adjunct Lecturer", room: "", phone: "", email: "rirogers@bmcc.cuny.edu" },
+            { name: "Robert Greer", title: "Lecturer", room: "F-930V", phone: "(212) 346-8450", email: "rgreer@bmcc.cuny.edu" },
+            { name: "Robert L. Eckman", title: "Adjunct Lecturer", room: "", phone: "", email: "reckman@bmcc.cuny.edu" },
+            { name: "Santina Benincasa", title: "Adjunct Lecturer", room: "", phone: "", email: "sbenincasa@bmcc.cuny.edu" },
+            { name: "Tak Yuen", title: "Sr College Lab Tech", room: "F-1030J", phone: "(212) 220-1494", email: "tyuen@bmcc.cuny.edu" },
+            { name: "Takho Tsoi", title: "", room: "", phone: "", email: "TTSOI@bmcc.cuny.edu" },
+            { name: "Tamer Avcilar", title: "Lecturer", room: "F-930J", phone: "(212) 220-1478", email: "tavcilar@bmcc.cuny.edu" },
+            { name: "Vernon Mckenzie", title: "Adjunct Lecturer", room: "", phone: "", email: "vmckenzie@bmcc.cuny.edu" },
+            { name: "Yakov Genis", title: "Professor", room: "F-930G", phone: "(212) 220-1482", email: "ygenis@bmcc.cuny.edu" },
+            { name: "Yan Chen", title: "Professor", room: "F-930H", phone: "(212) 220-8384", email: "ychen@bmcc.cuny.edu" },
+            { name: "Ying J. Yang", title: "", room: "", phone: "", email: "yiyang@bmcc.cuny.edu" },
+            { name: "Younes Benkarroum", title: "Assistant Professor", room: "F-1030L", phone: "(212) 776-7227", email: "ybenkarroum@bmcc.cuny.edu" }
         ];
 
         // function to load bmcc staff
-        function loadStaff(){
+        function loadStaff() {
             console.log("I'm inside loadStaff function");
 
             var tblRow = "";
-            for(var i = 0; i < staff.length; i++){
+            for (var i = 0; i < staff.length; i++) {
                 tblRow += "<tr>";
                 tblRow += "<td>" + staff[i].name + "</td>";
                 tblRow += "<td>" + staff[i].title + "</td>";
@@ -69,6 +140,46 @@
                 tblRow += "</tr>";
             }
             document.getElementById("staffTbl").innerHTML = tblRow;
+        }
+
+        function LoadStaffWithForEach() {
+            // Use of forEach loop
+            staff.forEach(function (deptStaff) {
+                // Create textNodes
+                var name = document.createTextNode(deptStaff.name);
+                var title = document.createTextNode(deptStaff.title);
+                var room = document.createTextNode(deptStaff.room);
+                var phone = document.createTextNode(deptStaff.phone);
+                var email = document.createTextNode(deptStaff.email);
+
+                // Create <tr> element
+                var tr = document.createElement("tr");
+
+                // Create <td> elements
+                var td1 = document.createElement("td");
+                var td2 = document.createElement("td");
+                var td3 = document.createElement("td");
+                var td4 = document.createElement("td");
+                var td5 = document.createElement("td");
+
+                // Appen text to TDs
+                td1.appendChild(name);
+                td2.appendChild(title);
+                td3.appendChild(room);
+                td4.appendChild(phone);
+                td5.appendChild(email);
+
+                // Append TDs to TR
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                tr.appendChild(td4);
+                tr.appendChild(td5);
+
+                // Append TR to table
+                document.getElementById("staffTbl2").appendChild(tr);
+
+            });
         }
     </script>
 
